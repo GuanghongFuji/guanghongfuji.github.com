@@ -27,12 +27,6 @@ gulp.task('html', function(){
     .pipe(gulp.dest('./dist/html'))
 })
 
-//index html
-gulp.task('index', function(){
-    gulp.src('./src/html/index.html')
-        .pipe(gulp.dest('./'))
-})
-
 // 合并，压缩文件
 gulp.task('scripts', function() {
     gulp.src('./src/js/*.js')
@@ -44,15 +38,15 @@ gulp.task('scripts', function() {
 });
 
 // serve
-gulp.task('serve', ['lint', 'sass', 'scripts', 'html', 'index'], function(){
+gulp.task('serve', ['lint', 'sass', 'scripts', 'html'], function(){
     browserSync.init({
         server: "./"
     });
     // 监听文件变化
     gulp.watch('./src/js/*.js', ['lint', 'scripts'])
     gulp.watch('./src/sass/*.scss', ['sass'])
-    gulp.watch('./src/html/*.html', ['html', 'index'])
-    gulp.watch(['./src/js/*.js', './src/html/*.html', './src/scss/*.scss'])
+    gulp.watch('./src/html/*.html', ['html'])
+    gulp.watch(['./src/js/*.js', './src/html/*.html', './src/scss/*.scss', './index.html'])
         .on('change', reload);
 });
 //default

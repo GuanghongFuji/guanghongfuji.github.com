@@ -10,6 +10,7 @@ this is the font end of guanghong website
  
  bower install
 
- then you can run **gulp** or **yarn start** 
+ gulp
 
 ```
+you can run **gulp** or **yarn start** to start.
