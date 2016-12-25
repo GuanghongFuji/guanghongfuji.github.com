@@ -39,3 +39,9 @@ jspm_packages
 libs
 
 dist/
+/vendor
+/node_modules
+Homestead.yaml
+Homestead.json
+.env
+.idea
